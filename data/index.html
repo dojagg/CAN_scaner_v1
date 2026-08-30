@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OBD2 Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard">
+        <header>
+            <h1>DASHBOARD</h1>
+            <div class="status-bar">
+                Connection: <span id="status" class="disconnected">Disconnected</span>
+            </div>
+        </header>
+        
+        <main class="grid">
+            <!-- Блок Оборотов -->
+            <div class="card card-wide">
+                <div class="card-title">Обороты двигателя</div>
+                <div class="card-value"><span id="rpm">0</span> <span class="unit">RPM</span></div>
+            </div>
+            
+            <!-- Блок Температуры ОЖ -->
+            <div class="card">
+                <div class="card-title">Температура ОЖ</div>
+                <div class="card-value"><span id="cool">0</span> <span class="unit">°C</span></div>
+            </div>
+            
+            <!-- Блок Дросселя -->
+            <div class="card">
+                <div class="card-title">Положение дроссельной заслонки</div>
+                <div class="card-value"><span id="throttle">0</span> <span class="unit">%</span></div>
+            </div>
+
+             <!-- Блок напряжения -->
+            <div class="card">
+                <div class="card-title">Напряжение бортовой сети</div>
+                <div class="card-value"><span id="volt">0</span> <span class="unit">V</span></div>
+            </div>
+
+            <!-- Блок нагрузки на двигатель -->
+            <div class="card">
+                <div class="card-title">Нагрузка на двигатель</div>
+                <div class="card-value"><span id="load">0</span> <span class="unit">%</span></div>
+            </div>
+
+            <!-- Блок пробега после сброса dtc -->
+            <div class="card">
+                <div class="card-title">Пробег после последнего сброса ошибок</div>
+                <div class="card-value"><span id="dist">0</span> <span class="unit">km</span></div>
+            </div>
+
+            <!-- Блок VIN-номера -->
+            <div class="card card-wide">
+                <div class="card-title">VIN-номер автомобиля</div>
+                <div class="card-value"><span id="vin-number">Ожидание...</span> <span class="unit"></span></div>
+            </div>
+        </main>
+
+
+        <div class="wrapper">
+            <button class="scanbutton" type="button" id="scan_button">Поиск кодов неисправностей</button>
+            <button class="scanbutton" type="button" id="delete_button">Удаление кодов неисправностей</button>
+        </div>
+
+        <div class="card" id="output">
+            <h3 class = "output-title">Результаты сканирования:</h3>
+
+            <div id="error_list" class="text">(Нажмите кнопку для поиска)</div>
+         </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

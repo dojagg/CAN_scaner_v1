@@ -1,0 +1,226 @@
+:root {
+    --bg-color: #f2f2f7;        
+    --card-bg: #ffffff;         
+    --accent-blue: #007aff;    
+    --accent-red: #ff3b30;      
+    --text-main: #1c1c1e;       
+    --text-muted: #8e8e93;      
+    --border-color: #e5e5ea;    
+}
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.dashboard {
+    width: 100%;
+    max-width: 700px; 
+}
+
+/* ШАПКА */
+header {
+    text-align: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+h1 {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--text-main);
+    margin: 0 0 5px 0;
+}
+
+.status-bar {
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+.connected { color: #34c759; font-weight: 600;}
+.disconnected { color: var(--accent-red); font-weight: 600;}
+
+
+.grid {
+    display: flex;
+    flex-direction: column; 
+    gap: 8px; 
+}
+
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 6px; 
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0,0,0, 0.05);
+}
+
+.card-title {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-muted);
+    margin: 0;
+    text-transform: none; 
+    letter-spacing: normal;
+}
+
+.card-value {
+    font-size: 24px; 
+    font-weight: 600;
+    color: var(--text-main); 
+    font-variant-numeric: tabular-nums;
+    text-align: right;
+}
+
+#vin-number
+{
+    font-size: 18px;        
+    letter-spacing: 1px;       
+    word-break: break-all;     
+    display: inline-block;
+}
+
+.unit {
+    font-size: 14px;
+    color: var(--text-muted);
+    font-weight: normal;
+    margin-left: 4px;
+}
+
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.scanbutton {
+    background-color: var(--accent-blue); 
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    padding: 16px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    flex: 1; /* Кнопки делят ширину пополам */
+    cursor: pointer;
+    transition: opacity 0.2s, transform 0.1s;
+}
+
+#delete_button {
+    background-color: #ffffff;
+    border: 1px solid var(--accent-red);
+    color: var(--accent-red);
+}
+#delete_button:hover:not(:disabled) {
+    background-color: rgba(255, 59, 48, 0.1); 
+}
+
+.scanbutton:active:not(:disabled) {
+    transform: scale(0.98); 
+}
+
+.scanbutton:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+
+#output {
+    flex-direction: column;
+    align-items: flex-start; 
+    padding: 20px;
+}
+
+.output-title {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin: 0 0 10px 0;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.text {
+    font-size: 15px;
+    color: var(--text-main);
+    font-weight: normal;
+}
+
+
+#output ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+
+#output li {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+
+.dtc-code {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+
+.dtc-desc {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--text-main); 
+    line-height: 1.4;
+}
+
+.dtc-active {
+    color: #ff3b30; 
+    background-color: rgba(255, 59, 48, 0.1); 
+    border: 1px solid rgba(255, 59, 48, 0.3);
+}
+
+.dtc-pending {
+    color: #ff9500; 
+    background-color: rgba(255, 149, 0, 0.1); 
+    border: 1px solid rgba(255, 149, 0, 0.3);
+}
+
+.dtc-permanent {
+    color: #007aff; 
+    background-color: rgba(0, 122, 255, 0.1); 
+    border: 1px solid rgba(0, 122, 255, 0.3);
+}
+
+.dtc-cleared {
+    color: #2d881f; 
+    background-color: rgba(19, 126, 21, 0.326); 
+    border: 1px solid rgba(45, 185, 52, 0.3);
+}
+
+
+@media (max-width: 400px) {
+    .wrapper {
+        flex-direction: column;
+    }
+    .card {
+        padding: 12px 15px;
+    }
+}
