@@ -16,3 +16,6 @@ A standalone automotive diagnostic scanner built on the **ESP32** microcontrolle
 
 ## Wiring Diagram
 ![Wiring Diagram](schematic.png)
+
+## Dashboard Example
+![Dashboard Example](example.png)
